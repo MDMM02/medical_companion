@@ -373,6 +373,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnResetEl?.addEventListener("click", resetAll);
 
   // --- Init ---
+  normalizeMuscleClasses();
   addSvgTitlePerMuscle();
   initMuscleClicks();
   renderSymptomChips();
