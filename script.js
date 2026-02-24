@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // State + config
   // =========================
   const DEFAULT_SYMPTOMS = [
-    "Abdominal pain","Back pain","Chest pain","Confusion","Constipation","Cough","Coughing up blood",
-    "Diarrhea","Dizziness","Fainting / faint","Fatigue","Fever","Headache","Joint pain","Leg weakness",
-    "Nausea","Neck stiffness","Numbness/tingling","Rash","Shortness of breath","Sore throat","Swelling",
-    "Swollen lips/tongue","Urinary pain","Vomiting"
+    "Confusion","Constipation","Cough","Coughing up blood",
+    "Diarrhea","Dizziness","Fainting","Fatigue","Fever","Headache",
+    "Nausea","Numbness/tingling","Rash","Shortness of breath","Sore throat","Swelling",
+    ,"Urinary pain","Vomiting"
   ];
 
   const SVG_FILES = {

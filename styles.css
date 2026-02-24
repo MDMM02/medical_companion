@@ -141,7 +141,7 @@ body{
   pointer-events:none;
   user-select:none;
   opacity: 0.9;
-  filter: grayscale(100%) contrast(1.05) brightness(0.9);
+ 
 }
 .svgHost{
   position:absolute;
@@ -173,17 +173,29 @@ body{
 
 /* Body parts */
 .svgHost path.bodypart{
-  fill: rgba(0,0,0,0.18) !important;
-  cursor:pointer;
-  transition: fill 0.12s ease, transform 0.12s ease;
+  fill: transparent !important;
+  stroke: transparent !important;
+  opacity: 1;              /* we hide via fill/stroke, not opacity */
+  pointer-events: all;
+  transition: fill 120ms ease, stroke 120ms ease, filter 120ms ease, transform 120ms ease;
   transform-origin: center;
 }
+
+/* Hover: red overlay */
 .svgHost path.bodypart:hover{
-  fill: rgba(220,38,38,0.65) !important; /* visible but slightly softer */
+  fill: rgba(220,38,38,0.35) !important;
+  stroke: rgba(220,38,38,0.65) !important;
+  stroke-width: 1.2;
   transform: scale(1.01);
+  filter: drop-shadow(0 0 6px rgba(220,38,38,0.55));
 }
+
+/* Clicked/selected: blue overlay */
 .svgHost path.bodypart.active{
-  fill: rgba(59,130,246,0.75) !important;
+  fill: rgba(59,130,246,0.35) !important;
+  stroke: rgba(59,130,246,0.75) !important;
+  stroke-width: 1.2;
+  filter: drop-shadow(0 0 8px rgba(59,130,246,0.65));
 }
 
 .bodyHint{
