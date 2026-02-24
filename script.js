@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const SVG_FILES = {
     front: {
-      parts: "./front_sil.svg",
+      parts: "front_sil.svg",
       muscles: "./front_muscles.svg",
     },
     back: {
@@ -21,9 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const IMG_FILES = {
-    front: "./front.jpg",
-    back: "./back.jpg",
-  };
+  front: {
+    parts: "front_sil.jpg",
+    muscles: "front_muscles.jpg",
+  },
+  back: {
+    parts: "./back_sil.jpg",
+    muscles: "./back_muscles.jpg",
+  }
+};
 
   const state = {
     view: "front",      // "front" | "back"
@@ -162,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function renderBody() {
     // background image
-    bodyImg.src = IMG_FILES[state.view];
+    bodyImg.src = IMG_FILES[state.view][state.layer];
 
     const svgUrl = SVG_FILES[state.view][state.layer];
     const svgText = await loadSvg(svgUrl);
